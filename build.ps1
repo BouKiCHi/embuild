@@ -3,6 +3,8 @@ Param([bool]$verbose=$false)
 
 Write-Host "Assembling..."
 
+$useSjasm = $true
+
 # git clone https://github.com/mucom88/mucom88 mucom88em
 
 $srcDir = "mucom88em\mucom88em\src"
@@ -14,6 +16,12 @@ $a = @(
 )
 
 function assemble($src,$bin,$lst) {
+    if ($useSjasm) {
+        echo sjasmplus --raw=$bin --lst=$lst $src 
+        sjasmplus --raw=$bin --lst=$lst $src 
+        return
+    }
+
     # Write-Output "assemble $src $bin $lst"
     if (Test-Path .\pasmo.exe) {
         .\pasmo $src $bin $lst
