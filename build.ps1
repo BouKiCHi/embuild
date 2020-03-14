@@ -17,16 +17,15 @@ $a = @(
 
 function assemble($src,$bin,$lst) {
     if ($useSjasm) {
-        echo sjasmplus --raw=$bin --lst=$lst $src 
-        sjasmplus --raw=$bin --lst=$lst $src 
-        return
+        echo sjasmplus --lst=$lst $src 
+        sjasmplus --lst=$lst $src 
     }
 
     # Write-Output "assemble $src $bin $lst"
     if (Test-Path .\pasmo.exe) {
-        .\pasmo $src $bin $lst
+        .\pasmo $src $bin
     } else {
-        pasmo $src $bin $lst
+        pasmo $src $bin
     }
 }
 
