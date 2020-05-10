@@ -1,13 +1,14 @@
 
 ■make_image.bat
 
-make_image.batはMUCOM88emの起動可能なディスクイメージを作成するバッチファイルです。
+make_image.batはMUCOM88em / MUCOM88Wの起動可能なディスクイメージを作成するバッチファイルです。
 
 ■使用方法
 バッチファイルと同じディレクトリに、次のファイルを置いてください
 
 ・MUCOM88em.d88
 ・d88saver.exe
+・song.bin
 
 コマンドプロンプトで、make_image.batを実行します。
 
