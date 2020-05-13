@@ -24,11 +24,11 @@ function assemble($src,$bin,$lst) {
     # Write-Output "assemble $src $bin $lst"
     if (Test-Path .\pasmo.exe) {
         .\pasmo $src $bin
-        .\pasmo -1 $src $bin | Out-File -Encoding default $lst
+        .\pasmo -d $src $bin | Out-File -Encoding default $lst
     } else {
         echo "pasmo $src $bin"
         pasmo $src $bin
-        pasmo -1 $src $bin | Out-File -Encoding default $lst
+        pasmo -d $src $bin | Out-File -Encoding default $lst
     }
 }
 
